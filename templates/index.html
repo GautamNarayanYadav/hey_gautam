@@ -1,18 +1,86 @@
 {% load static %}
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam Portfolio</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-    <h1>Welcome Gautam 🚀</h1>
+    <!-- Hero Section -->
+    <section class="hero">
 
-    <!-- JS -->
+        <div class="profile-box">
+            <img
+                id="profile_image"
+                src=""
+                alt="profile"
+                class="profile-image"
+            >
+        </div>
+
+        <h1 id="title">Loading...</h1>
+
+        <h3 id="subtitle"></h3>
+
+        <p id="description"></p>
+
+        <div class="buttons">
+
+            <a
+                id="github_btn"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                id="linkedin_btn"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about">
+
+        <h2 id="about_title"></h2>
+
+        <p id="about_description"></p>
+
+    </section>
+
+
+    <!-- Stats -->
+    <section class="stats">
+
+        <div class="card">
+            <h2 id="projects">0</h2>
+            <p>Projects</p>
+        </div>
+
+        <div class="card">
+            <h2 id="experience">0</h2>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="card">
+            <h2 id="clients">0</h2>
+            <p>Happy Clients</p>
+        </div>
+
+    </section>
+
+
     <script src="{% static 'js/script.js' %}"></script>
 
 </body>
