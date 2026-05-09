@@ -26,8 +26,10 @@ SECRET_KEY = 'django-insecure-logdbi0g)!kvn#_*=$dtfwy4f=mrxg!5&$cic06r7fzs6=g#ub
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "hey-gautam.onrender.com",
+    "127.0.0.1",
+]
 
 # Application definition
 
