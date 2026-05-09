@@ -8,7 +8,11 @@ class MainPage(models.Model):
     description = models.TextField()
 
     # Profile
-    profile_image = models.URLField(blank=True, null=True)
+    profile_image = models.ImageField(
+        upload_to='profile/',
+        null=True,
+        blank=True
+    )
 
     # CTA buttons
     resume_url = models.URLField(blank=True, null=True)
