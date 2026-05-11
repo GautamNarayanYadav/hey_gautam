@@ -1,86 +1,347 @@
 {% load static %}
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gautam Portfolio</title>
+
+    <title>Gautam Yadav | Software Developer</title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
 
-        <div class="profile-box">
-            <img
-                id="profile_image"
-                src=""
-                alt="profile"
-                class="profile-image"
-            >
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        Gautam.
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <p class="intro">
+        HELLO I'M
+    </p>
+
+    <h1>
+        Gautam Yadav
+    </h1>
+
+    <h2>
+        Software Developer
+    </h2>
+
+    <p class="hero-text">
+
+        Passionate backend developer with 4+ years of experience
+        building scalable enterprise applications using Python,
+        Django, DRF, PostgreSQL, APIs, cloud deployment,
+        and performance optimization.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="#projects" class="btn">
+            View Projects
+        </a>
+
+        <a href="#contact" class="btn-outline">
+            Hire Me
+        </a>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h3>
+                4+
+            </h3>
+
+            <p>
+                Years Experience
+            </p>
+
         </div>
 
-        <h1 id="title">Loading...</h1>
 
-        <h3 id="subtitle"></h3>
+        <div class="stat-card">
 
-        <p id="description"></p>
+            <h3>
+                10+
+            </h3>
 
-        <div class="buttons">
-
-            <a
-                id="github_btn"
-                target="_blank"
-            >
-                GitHub
-            </a>
-
-            <a
-                id="linkedin_btn"
-                target="_blank"
-            >
-                LinkedIn
-            </a>
+            <p>
+                Projects
+            </p>
 
         </div>
 
-    </section>
 
+        <div class="stat-card">
 
-    <!-- About -->
-    <section class="about">
+            <h3>
+                100%
+            </h3>
 
-        <h2 id="about_title"></h2>
+            <p>
+                Dedication
+            </p>
 
-        <p id="about_description"></p>
-
-    </section>
-
-
-    <!-- Stats -->
-    <section class="stats">
-
-        <div class="card">
-            <h2 id="projects">0</h2>
-            <p>Projects</p>
         </div>
 
-        <div class="card">
-            <h2 id="experience">0</h2>
-            <p>Years Experience</p>
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2>
+        About Me
+    </h2>
+
+    <p>
+
+        I'm Gautam Yadav, a software developer focused on
+        backend architecture, scalable API development,
+        system optimization, and enterprise software solutions.
+
+    </p>
+
+
+    <p>
+
+        I enjoy solving complex engineering challenges,
+        optimizing databases, building automation systems,
+        and transforming business requirements into
+        high-performance applications.
+
+    </p>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <h2>
+        Technical Skills
+    </h2>
+
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            Python
         </div>
 
-        <div class="card">
-            <h2 id="clients">0</h2>
-            <p>Happy Clients</p>
+        <div class="skill">
+            Django
         </div>
 
-    </section>
+        <div class="skill">
+            DRF
+        </div>
+
+        <div class="skill">
+            PostgreSQL
+        </div>
+
+        <div class="skill">
+            MySQL
+        </div>
+
+        <div class="skill">
+            Redis
+        </div>
+
+        <div class="skill">
+            Celery
+        </div>
+
+        <div class="skill">
+            Docker
+        </div>
+
+        <div class="skill">
+            AWS
+        </div>
+
+        <div class="skill">
+            Linux
+        </div>
+
+        <div class="skill">
+            Git
+        </div>
+
+        <div class="skill">
+            REST APIs
+        </div>
+
+    </div>
+
+</section>
 
 
-    <script src="{% static 'js/script.js' %}"></script>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <h2>
+        Featured Projects
+    </h2>
+
+
+    <div class="project-grid">
+
+
+        <div class="project-card">
+
+            <h3>
+                HRMS Platform
+            </h3>
+
+            <p>
+                Employee attendance, payroll, leave,
+                reporting and analytics system.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                Attendance Tracker
+            </h3>
+
+            <p>
+                Real-time attendance tracking
+                with reporting dashboard.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                Employee API
+            </h3>
+
+            <p>
+                DRF-based scalable employee
+                management APIs.
+            </p>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <h3>
+                Analytics Dashboard
+            </h3>
+
+            <p>
+                Business intelligence
+                and reporting system.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        Contact Me
+    </h2>
+
+
+    <form>
+
+        <input
+                type="text"
+                placeholder="Your Name"
+        >
+
+
+        <input
+                type="email"
+                placeholder="Your Email"
+        >
+
+
+        <textarea
+                rows="6"
+                placeholder="Your Message"
+        ></textarea>
+
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<footer>
+
+    © 2026 Gautam Yadav | Software Developer
+
+</footer>
+
 
 </body>
 </html>
