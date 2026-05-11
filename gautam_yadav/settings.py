@@ -76,6 +76,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gautam_yadav.wsgi.application'
 
+REST_FRAMEWORK = {
+
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+
+        "rest_framework.authentication.SessionAuthentication",
+
+    ],
+
+    "DEFAULT_PERMISSION_CLASSES": [
+
+        "rest_framework.permissions.AllowAny",
+
+    ],
+
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

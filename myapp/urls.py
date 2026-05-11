@@ -1,7 +1,35 @@
-from django.urls import path
-from .views import home, MainPageAPIView
+from django.urls import (
+    path,
+    include
+)
+
+from rest_framework.routers import (
+    DefaultRouter
+)
+
+from .views import *
+
+
+router = DefaultRouter()
+
+router.register(
+    'contact',
+    ContactViewSet,
+    basename='contact'
+)
+
 
 urlpatterns = [
-    path('', home),
-    path('api/main-page/', MainPageAPIView.as_view()),
+
+    path(
+        'main-page/',
+        MainPageAPIView.as_view(),
+        name='main-page-api'
+    ),
+
+    path(
+        '',
+        include(router.urls)
+    ),
+
 ]

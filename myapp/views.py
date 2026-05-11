@@ -1,16 +1,10 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
-from .models import MainPage
-from .serializers import MainPageSerializer
-
-
-def home(request):
-    return render(
-        request,
-        "index.html"
-    )
+from .models import *
+from .serializers import *
 
 
 class MainPageAPIView(APIView):
@@ -24,3 +18,9 @@ class MainPageAPIView(APIView):
         serializer = MainPageSerializer(page)
 
         return Response(serializer.data)
+
+
+class ContactViewSet(ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    http_method_names = ['post']

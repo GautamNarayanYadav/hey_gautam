@@ -1,347 +1,101 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gautam Yadav | Software Developer</title>
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-</head>
-<body>
-
-
-<!-- NAVBAR -->
-
-<nav>
-
-    <div class="logo">
-        Gautam.
-    </div>
-
-    <ul class="nav-links">
-
-        <li><a href="#home">Home</a></li>
-
-        <li><a href="#about">About</a></li>
-
-        <li><a href="#skills">Skills</a></li>
-
-        <li><a href="#projects">Projects</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-
-    </ul>
-
-</nav>
+{% block title %}
+Home | Gautam Yadav
+{% endblock %}
 
 
 
-<!-- HERO -->
+{% block content %}
 
-<section class="hero" id="home">
-
-    <p class="intro">
-        HELLO I'M
-    </p>
-
-    <h1>
-        Gautam Yadav
-    </h1>
-
-    <h2>
-        Software Developer
-    </h2>
-
-    <p class="hero-text">
-
-        Passionate backend developer with 4+ years of experience
-        building scalable enterprise applications using Python,
-        Django, DRF, PostgreSQL, APIs, cloud deployment,
-        and performance optimization.
-
-    </p>
+<section class="hero">
 
 
-    <div class="hero-buttons">
+    <div class="left">
 
-        <a href="#projects" class="btn">
-            View Projects
-        </a>
+        <p class="tag">
 
-        <a href="#contact" class="btn-outline">
-            Hire Me
-        </a>
+            👋 Hello I'm
 
-    </div>
+        </p>
 
 
-    <div class="stats">
+        <h1>
 
-        <div class="stat-card">
+            Gautam
 
-            <h3>
-                4+
-            </h3>
+            <span>
 
-            <p>
-                Years Experience
-            </p>
+                Yadav
 
-        </div>
+            </span>
+
+        </h1>
 
 
-        <div class="stat-card">
+        <h2>
 
-            <h3>
-                10+
-            </h3>
+            Backend Engineer
 
-            <p>
+        </h2>
+
+
+        <p class="desc">
+
+            Building scalable applications
+            using Python, Django, DRF,
+            PostgreSQL, Redis, Docker & AWS.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a href="#">
+
+                Hire Me
+
+            </a>
+
+
+            <a href="#">
+
                 Projects
-            </p>
+
+            </a>
 
         </div>
 
 
-        <div class="stat-card">
 
-            <h3>
-                100%
-            </h3>
+        <div class="socials">
 
-            <p>
-                Dedication
-            </p>
+            <i class="fab fa-github"></i>
 
-        </div>
+            <i class="fab fa-linkedin"></i>
 
-    </div>
+            <i class="fab fa-instagram"></i>
 
-</section>
+            <i class="fab fa-x-twitter"></i>
 
-
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-    <h2>
-        About Me
-    </h2>
-
-    <p>
-
-        I'm Gautam Yadav, a software developer focused on
-        backend architecture, scalable API development,
-        system optimization, and enterprise software solutions.
-
-    </p>
-
-
-    <p>
-
-        I enjoy solving complex engineering challenges,
-        optimizing databases, building automation systems,
-        and transforming business requirements into
-        high-performance applications.
-
-    </p>
-
-</section>
-
-
-
-<!-- SKILLS -->
-
-<section class="skills" id="skills">
-
-    <h2>
-        Technical Skills
-    </h2>
-
-
-    <div class="skills-grid">
-
-        <div class="skill">
-            Python
-        </div>
-
-        <div class="skill">
-            Django
-        </div>
-
-        <div class="skill">
-            DRF
-        </div>
-
-        <div class="skill">
-            PostgreSQL
-        </div>
-
-        <div class="skill">
-            MySQL
-        </div>
-
-        <div class="skill">
-            Redis
-        </div>
-
-        <div class="skill">
-            Celery
-        </div>
-
-        <div class="skill">
-            Docker
-        </div>
-
-        <div class="skill">
-            AWS
-        </div>
-
-        <div class="skill">
-            Linux
-        </div>
-
-        <div class="skill">
-            Git
-        </div>
-
-        <div class="skill">
-            REST APIs
         </div>
 
     </div>
 
-</section>
 
 
 
+    <div class="right">
 
-<!-- PROJECTS -->
-
-<section class="projects" id="projects">
-
-    <h2>
-        Featured Projects
-    </h2>
-
-
-    <div class="project-grid">
-
-
-        <div class="project-card">
-
-            <h3>
-                HRMS Platform
-            </h3>
-
-            <p>
-                Employee attendance, payroll, leave,
-                reporting and analytics system.
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>
-                Attendance Tracker
-            </h3>
-
-            <p>
-                Real-time attendance tracking
-                with reporting dashboard.
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>
-                Employee API
-            </h3>
-
-            <p>
-                DRF-based scalable employee
-                management APIs.
-            </p>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>
-                Analytics Dashboard
-            </h3>
-
-            <p>
-                Business intelligence
-                and reporting system.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-    <h2>
-        Contact Me
-    </h2>
-
-
-    <form>
-
-        <input
-                type="text"
-                placeholder="Your Name"
+        <img
+                src="{% static 'images/1000078633.jpg' %}"
+                alt="Gautam"
         >
 
+    </div>
 
-        <input
-                type="email"
-                placeholder="Your Email"
-        >
-
-
-        <textarea
-                rows="6"
-                placeholder="Your Message"
-        ></textarea>
-
-
-        <button type="submit">
-            Send Message
-        </button>
-
-    </form>
 
 </section>
 
-
-
-<footer>
-
-    © 2026 Gautam Yadav | Software Developer
-
-</footer>
-
-
-</body>
-</html>
+{% endblock %}

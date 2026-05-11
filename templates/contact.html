@@ -1,0 +1,423 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+Contact | Gautam Yadav
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<section class="contact-page">
+
+
+    <div class="contact-left">
+
+
+        <p class="tag">
+
+            CONTACT ME
+
+        </p>
+
+
+
+        <h1>
+
+            Let's Build Something Amazing
+
+        </h1>
+
+
+
+        <p class="contact-desc">
+
+            Open for freelance projects,
+            backend engineering,
+            Django development,
+            API architecture,
+            and startup collaborations.
+
+        </p>
+
+
+
+
+
+        <div class="contact-info">
+
+
+            <div>
+
+                <i class="fas fa-envelope"></i>
+
+                gautam@example.com
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fas fa-phone"></i>
+
+                +91 XXXXX XXXXX
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fas fa-location-dot"></i>
+
+                India
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="socials">
+
+
+            <a href="#">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+
+            <a href="#">
+
+                <i class="fab fa-linkedin"></i>
+
+            </a>
+
+
+            <a href="#">
+
+                <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+            <a href="#">
+
+                <i class="fab fa-x-twitter"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="contact-right">
+
+
+        <form id="contactForm">
+
+            {% csrf_token %}
+
+
+
+            <input
+                    id="name"
+                    type="text"
+                    placeholder="Your Name"
+                    required
+            >
+
+
+
+            <input
+                    id="email"
+                    type="email"
+                    placeholder="Your Email"
+                    required
+            >
+
+
+
+            <input
+                    id="subject"
+                    type="text"
+                    placeholder="Subject"
+            >
+
+
+
+            <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Your Message"
+                    required
+            ></textarea>
+
+
+
+
+
+            <button
+                    id="submitBtn"
+                    type="submit">
+
+                Send Message
+
+            </button>
+
+
+
+            <p id="responseText"></p>
+
+
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+{% block script %}
+
+<script>
+
+
+function getCookie(name){
+
+    let cookieValue = null;
+
+
+    let cookies =
+        document.cookie.split(';');
+
+
+    for(
+        let cookie of cookies
+    ){
+
+        cookie =
+            cookie.trim();
+
+
+        if(
+            cookie.startsWith(
+                name + '='
+            )
+        ){
+
+            cookieValue =
+                cookie.substring(
+                    name.length + 1
+                );
+
+        }
+
+    }
+
+
+    return cookieValue;
+
+}
+
+
+
+
+
+
+
+document
+    .getElementById(
+        "contactForm"
+    )
+    .onsubmit =
+    async function(e){
+
+        e.preventDefault();
+
+
+        const button =
+            document
+                .getElementById(
+                    "submitBtn"
+                );
+
+
+        const messageBox =
+            document
+                .getElementById(
+                    "responseText"
+                );
+
+
+        const csrfToken =
+            getCookie(
+                "csrftoken"
+            );
+
+
+
+        button.disabled = true;
+
+        button.innerHTML =
+            "Sending...";
+
+
+
+        try{
+
+
+            const response =
+                await fetch(
+                    "/api/contact/",
+                    {
+
+                        method:"POST",
+
+
+                        headers:{
+
+                            "Content-Type":
+                            "application/json",
+
+
+                            "X-CSRFToken":
+                            csrfToken
+
+                        },
+
+
+                        body:
+                        JSON.stringify({
+
+                            name:
+                            document
+                                .getElementById(
+                                    "name"
+                                ).value,
+
+
+                            email:
+                            document
+                                .getElementById(
+                                    "email"
+                                ).value,
+
+
+                            subject:
+                            document
+                                .getElementById(
+                                    "subject"
+                                ).value,
+
+
+                            message:
+                            document
+                                .getElementById(
+                                    "message"
+                                ).value
+
+                        })
+
+                    }
+                );
+
+
+
+
+            if(
+                response.ok
+            ){
+
+                messageBox.innerHTML =
+                    "Message sent successfully ✅";
+
+
+                messageBox.style.color =
+                    "#3b82f6";
+
+
+                this.reset();
+
+            }
+
+            else{
+
+                const data =
+                    await response.text();
+
+
+                console.log(
+                    data
+                );
+
+
+                messageBox.innerHTML =
+                    "Failed to send ❌";
+
+
+                messageBox.style.color =
+                    "red";
+
+            }
+
+
+        }
+
+        catch(error){
+
+            console.log(
+                error
+            );
+
+
+            messageBox.innerHTML =
+                "Server error ❌";
+
+
+            messageBox.style.color =
+                "red";
+
+        }
+
+
+
+        button.disabled = false;
+
+
+        button.innerHTML =
+            "Send Message";
+
+    };
+
+
+</script>
+
+{% endblock %}
